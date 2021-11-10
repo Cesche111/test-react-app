@@ -4,7 +4,7 @@ import Card from './../components/Card';
 
 const Products = ({changeEdit}) => {
     const [products, setProducts] = useState([]);
-    const [editData, seteditData] = useState({});
+    // const [editData, seteditData] = useState({});
 
     useEffect(() => {
         let cleanupFunction = false;
@@ -15,12 +15,19 @@ const Products = ({changeEdit}) => {
                 })
                 .catch(err => console.error('There was an error!', err))
                 .then((data) => {
-                    if (!cleanupFunction) {setProducts(data)};
+                    if (!cleanupFunction) {
+                        setProducts(data)
+                    }
+                    ;
                 });
         };
         fetchData();
         return () => cleanupFunction = true;
     }, []);
+
+    // useEffect(() => {
+    //     products = products=>products, [products]
+    // });
 
 
     const [searchValue, setSearchValue] = useState('');
@@ -35,7 +42,7 @@ const Products = ({changeEdit}) => {
         <div>
             <div className='form'>
                 <form>
-                    <label htmlFor="search">Search:  </label>
+                    <label htmlFor="search">Search: </label>
                     <input type='text'
                            id='search'
                            placeholder='Search your product...'
@@ -45,8 +52,10 @@ const Products = ({changeEdit}) => {
             </div>
 
             <div className={'App-body'}>
-                {filteredProducts && filteredProducts.map((item,i) => <Card key={item.id + i}
-                                                                            product={item} changeEdit = {(data)=>seteditData(data)}/>)}
+                {filteredProducts && filteredProducts.map((item, i) => <Card key={item.id + i}
+                                                                             product={item}
+                    // changeEdit = {(data)=>seteditData(data)}
+                />)}
             </div>
         </div>
     )

@@ -117,47 +117,10 @@
       "inCart": false
     },
     {
-      "id": "349792540",
-      "title": "azazaz",
-      "description": "aSDgvfs",
-      "price": "12312",
-      "inCart": false
-    },
-    {
-      "id": "349793098",
-      "title": "saas",
-      "description": "dfg",
-      "price": "12",
-      "inCart": false
-    },
-    {
-      "id": "349793594",
+      "id": "365510553",
       "title": "asd",
-      "description": "sdfs",
-      "price": "13",
-      "inCart": false
-    },
-    {
-      "id": "349793799",
-      "title": "asdasdasda",
-      "description": "",
-      "price": "13",
-      "inCart": false,
-      "quantity": 2
-    },
-    {
-      "id": "349794029",
-      "title": "qwdeqdwqdw",
       "description": "asd",
-      "price": "15",
-      "inCart": false,
-      "quantity": 6
-    },
-    {
-      "id": "349920524",
-      "title": "qwe",
-      "description": "adsfv",
-      "price": "12",
+      "price": "a12",
       "inCart": false
     }
   ],

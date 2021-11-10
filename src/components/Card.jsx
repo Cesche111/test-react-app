@@ -1,11 +1,18 @@
 import React from 'react';
 import Button from  './../components/Button';
 import { Link } from 'react-router-dom';
+import EditView from './../pages/EditView';
 
 const Card = ({product, changeEdit}) => {
+    const passProduct = (product)=> {
+        // console.log(product);
+        return <EditView product = {product}/>
+    }
 
-    const handleEdit =()=>{
-        changeEdit(product)
+    const handleEdit =(product)=>{
+        //console.log(product)
+        //changeEdit(product)
+        passProduct(product)
     };
 
     const handleDelete =()=>{
@@ -56,7 +63,9 @@ const Card = ({product, changeEdit}) => {
                 description: {product.description}
             </div>
             <div>
-                <Link to='/EditView' ><button style={{margin: "8px", backgroundColor: "grey"}} onClick={handleEdit}>Edit</button></Link>
+                <Link to={{pathname:'/EditView', product, product}} >
+                    <button style={{margin: "8px", backgroundColor: "grey"}} onClick = {()=> handleEdit(product)}>Edit</button>
+                </Link>
                 <button style={{margin: "8px", backgroundColor: "grey"}} onClick={handleDelete}>
                     Delete
                 </button>

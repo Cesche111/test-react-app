@@ -1,14 +1,18 @@
 import React from 'react';
 import '../App.css';
-import {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+
 
 const CreateView = () => {
+
     const [product, setProduct] = useState({})
     const [price, setPrice] = useState(0)
     const [description, setDescription] = useState('')
 
-    let newProduct = {
+    const history = useHistory();
+
+    const newProduct = {
         "id": Date.now().toString().substr(2, 9),
         "title": product,
         "description": description,
@@ -22,8 +26,7 @@ const CreateView = () => {
             body: JSON.stringify(product)
         };
         fetch('http://localhost:3001/products', requestOptions)
-            .then(response => (console.log(response.json())))
-            .then(<Link to={{pathname: '/MainView'}} />)
+            .then(history.push('/MainView'))
             .catch(err => console.error('There was an error!', err))
     }
 
@@ -31,9 +34,8 @@ const CreateView = () => {
     const handleInputPrice = (e) => setPrice(e.target.value);
     const handleInputDescription = (e) => setDescription(e.target.value);
     const handleSubmit = () => {
-        console.log(newProduct);
         postNewProduct(newProduct);
-        // window.location.href = "http://localhost:3000/MainView"
+
     }
     return (
         <div>
@@ -59,9 +61,7 @@ const CreateView = () => {
 
 
                 </form>
-
                     <button onClick={handleSubmit}>Save</button>
-                {/*</Link>*/}
             </div>
         </div>
     )

@@ -6,7 +6,7 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 150,
       "inCart": true,
-      "quantity": 3
+      "quantity": 1
     },
     {
       "id": "ox98i1f5idg",
@@ -14,23 +14,23 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 200,
       "inCart": true,
-      "quantity": 1
+      "quantity": 3
     },
     {
       "id": "adv62bxeq9i",
       "title": "Lexus",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 250,
-      "inCart": true,
-      "quantity": 1
+      "inCart": false,
+      "quantity": 8
     },
     {
       "id": "yp5hqdyqh9b",
       "title": "Mazda",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 300,
-      "inCart": true,
-      "quantity": 7
+      "inCart": false,
+      "quantity": 1
     },
     {
       "id": "e79ep31aiwk",
@@ -115,32 +115,9 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 900,
       "inCart": false
-    },
-    {
-      "id": "365510553",
-      "title": "asd",
-      "description": "asd",
-      "price": "a12",
-      "inCart": false
     }
   ],
   "cart": [
-    {
-      "id": "ox98i1f5idg",
-      "title": "Citroen",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
-      "price": 200,
-      "inCart": true,
-      "quantity": 14
-    },
-    {
-      "id": "yp5hqdyqh9b",
-      "title": "Mazda",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
-      "price": 300,
-      "inCart": true,
-      "quantity": 9
-    },
     {
       "id": "BMW",
       "title": "iphone 5c",
@@ -148,6 +125,14 @@
       "price": 150,
       "inCart": true,
       "quantity": 1
+    },
+    {
+      "id": "ox98i1f5idg",
+      "title": "Citroen",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+      "price": 200,
+      "inCart": true,
+      "quantity": 2
     }
   ]
 }

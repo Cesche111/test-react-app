@@ -5,13 +5,10 @@ import EditView from './../pages/EditView';
 
 const Card = ({product, changeEdit}) => {
     const passProduct = (product)=> {
-        // console.log(product);
         return <EditView product = {product}/>
     }
 
     const handleEdit =(product)=>{
-        //console.log(product)
-        //changeEdit(product)
         passProduct(product)
     };
 
@@ -24,7 +21,7 @@ const Card = ({product, changeEdit}) => {
             const url = 'http://localhost:3001/products/' + product.id.toString();
             fetch(url, requestOptions)
                 .catch(err => console.error('There was an error!', err))
-                .then(()=>{window.location.href = "http://localhost:3000/"})
+                // .then(()=>{window.location.href = "http://localhost:3000/"})
     };
 
     const handleAddtoCart =()=>{

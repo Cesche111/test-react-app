@@ -3,7 +3,13 @@ import CardsToCart from './../components/CardsToCart';
 
 const ProductsInCart = ({changeProd, changeAmount }) => {
     const [productsInCart, setProductsInCart] = useState([]);
-    const [totalAmount, setTotalAmount] = useState(0);
+    // const [totalAmount, setTotalAmount] = useState(0);
+    const initialSums = productsInCart?.map(prod=>({[prod.id]: prod.price})) || {}
+    console.log('init', initialSums)
+    const [cardsSums, setCardsSums] = useState(initialSums);
+    console.log(Object.values(cardsSums))
+    const totalAmount = Object.values(cardsSums).reduce((sum, item) => item + sum, 0)
+    // productsInCart.reduce((acc, p) => p.price * p.quantity, 0)
 
     useEffect(() => {
         let cleanupFunction = false;
@@ -29,9 +35,10 @@ const ProductsInCart = ({changeProd, changeAmount }) => {
         <div>
             <div className={'App-body'}>
                 {productsInCart && productsInCart.map((item,i) => <CardsToCart key={item.id + i} product={item}
-                                                                               changetotalAmount = {(amount)=>setTotalAmount(amount)}/>)}
+                                                                               changetotalAmount = {
+                                                                                   (amount, id)=> setCardsSums((prev)=>({...prev, [id]: amount}))}/>)}
             </div>
-
+            {/*{totalAmount}*/}
         </div>
     )
 }

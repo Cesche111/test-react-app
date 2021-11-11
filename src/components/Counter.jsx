@@ -6,12 +6,12 @@ function Counter({product, changeAmount}) {
 
     const handleIncrement = () => {
         setCount(prevCount => prevCount + 1);
-        changeAmount(count * product.price)
+
     };
 
     const handleDecrement = () => {
         setCount(prevCount => prevCount > 1 ? prevCount - 1 : 1);
-        changeAmount(count * product.price)
+
     };
 
 
@@ -24,6 +24,7 @@ function Counter({product, changeAmount}) {
             };
             const urlToCart = 'http://localhost:3001/cart/' + product.id.toString();
             fetch(urlToCart, requestPutOptions)
+                .then(changeAmount(count * product.price))
                 .catch(err => console.error('There was an error!', err))
         }
         fetchData(count)
